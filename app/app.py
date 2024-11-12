@@ -13,12 +13,6 @@ load_dotenv()
 
 app = App(token=os.getenv("SLACK_BOT_TOKEN"))
 
-@app.message("hello")
-def message_hello(message, say, a, b, c):
-    print(message)
-    print(say)
-    print(a, b, c)
-
 @app.command("/predictgpt")
 def predictgpt(ack, say, command):
     ack("_Predicting..._")
